@@ -1,1 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome</title>
+</head>
 
+<body>
+
+<h1 id="msg"></h1>
+
+<script>
+
+const params=new URLSearchParams(location.search);
+
+document.getElementById("msg").innerHTML=
+"Welcome <b>"+params.get("user")+"</b>";
+
+</script>
+
+</body>
+</html>
