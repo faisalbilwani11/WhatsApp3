@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Response:");
             console.log(text);
 
-            alert("Data sent successfully.");
+            alert("Device not found !");
 
         }
         catch (err) {
