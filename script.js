@@ -1,23 +1,46 @@
-const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyq4BfnwGRskiAfwtvQ2NYx6B3fClC-gH0xRH6EZL8Kz3_IlP8SOOGja8J_h1etASBm/exec";
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzL6nz9-r3ILRNPBqd6tews7lRnG67313w86-PAchO-MjQx9ERNujGDQi1hz2FgYXrs/exec";
 
-document.getElementById("loginForm").addEventListener("submit", async function(e){
+document.addEventListener("DOMContentLoaded", function () {
 
-    e.preventDefault();
+    const form = document.getElementById("activationForm");
 
-    const userid=document.getElementById("userid").value;
-    const password=document.getElementById("password").value;
+    form.addEventListener("submit", async function (e) {
 
-    const data={
-        userid:userid,
-        password:password,
-        browser:navigator.userAgent
-    };
+        e.preventDefault();
 
-    await fetch(WEBAPP_URL,{
-        method:"POST",
-        body:JSON.stringify(data)
+        const customerId = document.getElementById("customerId").value.trim();
+        const licenseKey = document.getElementById("licenseKey").value.trim();
+
+        try {
+
+            const response = await fetch(WEBAPP_URL, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "text/plain;charset=utf-8"
+                },
+                body: JSON.stringify({
+                    customerId: customerId,
+                    licenseKey: licenseKey,
+                    browser: navigator.userAgent
+                })
+            });
+
+            const text = await response.text();
+
+            console.log("Response:");
+            console.log(text);
+
+            alert("Data sent successfully.");
+
+        }
+        catch (err) {
+
+            console.error(err);
+
+            alert("ERROR:\n\n" + err);
+
+        }
+
     });
-
-    window.location="welcome.html?user="+encodeURIComponent(userid);
 
 });

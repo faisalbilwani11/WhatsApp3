@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Send Bulk Messages to WhatsApp</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>WhatsApp Bulk Message Software - Activation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -20,47 +24,56 @@
             💬
         </div>
 
-        <h1>Send Bulk Messages to WhatsApp</h1>
+        <h1>WhatsApp Bulk Message Software</h1>
 
         <p class="subtitle">
-            Enter your Gmail ID and Password to activate your WhatsApp Bulk Message Software.
+            Activate your software by entering your Customer ID and License Key.
         </p>
 
-        <form id="loginForm">
+        <form id="activationForm">
 
             <div class="input-group">
-                <label for="userid">Gmail Id</label>
+
+                <label>Customer ID</label>
+
                 <input
                     type="text"
-                    id="userid"
-                    placeholder="Enter Gmail ID"
-                    required
-                >
+                    id="customerId"
+                    placeholder="Enter Customer ID"
+                    required>
+
             </div>
 
             <div class="input-group">
-                <label for="password">Password</label>
+
+                <label>License Key</label>
+
                 <input
-                    type="password"
-                    id="password"
-                    placeholder="Enter Password"
-                    required
-                >
+                    type="text"
+                    id="licenseKey"
+                    placeholder="Enter License Key"
+                    required>
+
             </div>
 
-            <button type="submit" id="submitBtn">
-                Activate
+            <button type="submit" id="activateBtn">
+                Activate Software
             </button>
 
         </form>
 
-        <div id="loading" class="loading" style="display:none;">
+        <div id="loading" class="loading">
+
             <div class="spinner"></div>
+
             <p>Please wait...</p>
+
         </div>
 
         <footer>
-            © 2026 Send Bulk Messages to WhatsApp
+
+            © 2026 Jilansoft
+
         </footer>
 
     </div>
@@ -70,4 +83,5 @@
 <script src="script.js"></script>
 
 </body>
+
 </html>
