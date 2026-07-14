@@ -1,3 +1,8 @@
+/* ==========================================================
+   WhatsApp Bulk Messenger Pro
+   Premium UI by Jilansoft
+========================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -7,178 +12,294 @@
 
 body{
 
-    background:#f3f5f9;
+    background:#0b141a;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    overflow-x:hidden;
 
     min-height:100vh;
 
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
 }
 
-.container{
+/* =======================
+   Animated Background
+======================= */
+
+.background{
+
+    position:fixed;
+
+    top:0;
+    left:0;
 
     width:100%;
-    max-width:450px;
-    padding:20px;
+    height:100%;
+
+    overflow:hidden;
+
+    z-index:-1;
 
 }
 
-.card{
+.circle{
 
-    background:#ffffff;
-
-    border-radius:15px;
-
-    padding:40px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
-
-    text-align:center;
-
-}
-
-.logo{
-
-    font-size:60px;
-
-    margin-bottom:20px;
-
-}
-
-h1{
-
-    font-size:28px;
-
-    color:#333;
-
-    margin-bottom:10px;
-
-}
-
-.subtitle{
-
-    color:#666;
-
-    margin-bottom:30px;
-
-    line-height:1.6;
-
-}
-
-.input-group{
-
-    text-align:left;
-
-    margin-bottom:20px;
-
-}
-
-.input-group label{
-
-    display:block;
-
-    margin-bottom:8px;
-
-    color:#333;
-
-    font-weight:500;
-
-}
-
-.input-group input{
-
-    width:100%;
-
-    padding:14px;
-
-    border:1px solid #dcdcdc;
-
-    border-radius:8px;
-
-    font-size:15px;
-
-}
-
-.input-group input:focus{
-
-    outline:none;
-
-    border-color:#2b7cff;
-
-}
-
-button{
-
-    width:100%;
-
-    padding:15px;
-
-    border:none;
-
-    border-radius:8px;
-
-    background:#2b7cff;
-
-    color:white;
-
-    font-size:16px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-button:hover{
-
-    background:#135ee8;
-
-}
-
-.loading{
-
-    display:none;
-
-    margin-top:20px;
-
-}
-
-.spinner{
-
-    width:40px;
-
-    height:40px;
-
-    border:4px solid #ddd;
-
-    border-top:4px solid #2b7cff;
+    position:absolute;
 
     border-radius:50%;
 
-    animation:spin 1s linear infinite;
+    filter:blur(50px);
 
-    margin:auto;
+    opacity:.25;
+
+    animation:float 18s infinite linear;
 
 }
 
-@keyframes spin{
+.circle.one{
+
+    width:380px;
+
+    height:380px;
+
+    background:#25D366;
+
+    left:-80px;
+
+    top:120px;
+
+}
+
+.circle.two{
+
+    width:300px;
+
+    height:300px;
+
+    background:#128C7E;
+
+    right:-60px;
+
+    top:60px;
+
+    animation-duration:22s;
+
+}
+
+.circle.three{
+
+    width:250px;
+
+    height:250px;
+
+    background:#34B7F1;
+
+    bottom:-80px;
+
+    left:40%;
+
+    animation-duration:25s;
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-40px);
+
+    }
 
     100%{
 
-        transform:rotate(360deg);
+        transform:translateY(0px);
 
     }
 
 }
 
-footer{
+/* =======================
+      Main Container
+======================= */
 
-    margin-top:30px;
+.container{
 
-    color:#777;
+    width:100%;
+
+    max-width:500px;
+
+    padding:25px;
+
+}
+
+/* =======================
+      Glass Card
+======================= */
+
+.card{
+
+    background:rgba(255,255,255,.95);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:24px;
+
+    padding:45px;
+
+    box-shadow:
+
+        0 15px 40px rgba(0,0,0,.35);
+
+    animation:fadeIn .8s ease;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* =======================
+         Logo
+======================= */
+
+.logo{
+
+    width:95px;
+
+    height:95px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#25D366,#128C7E);
+
+    color:#fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:46px;
+
+    box-shadow:
+
+        0 10px 25px rgba(37,211,102,.4);
+
+}
+
+/* =======================
+        Heading
+======================= */
+
+h1{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#111B21;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#667781;
+
+    margin-top:10px;
+
+    font-size:15px;
+
+}
+
+/* =======================
+      Feature Badges
+======================= */
+
+.features{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:10px;
+
+    margin:30px 0;
+
+}
+
+.features div{
+
+    flex:1;
+
+    background:#F0FFF4;
+
+    border:1px solid #D8F5E4;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    text-align:center;
 
     font-size:13px;
+
+    color:#128C7E;
+
+    transition:.3s;
+
+}
+
+.features div:hover{
+
+    transform:translateY(-4px);
+
+    background:#E8FFF1;
+
+}
+
+.features i{
+
+    display:block;
+
+    font-size:22px;
+
+    margin-bottom:8px;
 
 }
